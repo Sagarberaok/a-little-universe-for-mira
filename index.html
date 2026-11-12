@@ -254,6 +254,23 @@
       <p class="tiny-note soundtrack-note">Choose any song. It will open in Spotify, where you can listen in the app or browser.</p>
     </section>
 
+    <!-- MIRA'S OWN BIRTHDAY PAGE -->
+    <section class="section-pad reveal-section birthday-reflection-section" id="your-page">
+      <p class="eyebrow">A PAGE THAT BELONGS TO YOU</p>
+      <h2>Your Birthday, Your Words</h2>
+      <p class="reflection-intro">When the day is over, if you feel like it, leave a little note about how it all went. The lovely bits, the unexpected bits, even the things that didn't go to plan. You don't have to answer questions or make it sound perfect. Just write whatever you want to remember.</p>
+      <form id="birthday-reflection-form" class="birthday-reflection-form">
+        <label for="birthdayReflection">A little piece of your eighteenth birthday</label>
+        <textarea id="birthdayReflection" name="birthday_experience" rows="7" minlength="5" maxlength="12000" required placeholder="Dear future me..."></textarea>
+        <input type="text" name="_honey" class="reflection-honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <input type="hidden" name="_subject" value="Mira's birthday reflection">
+        <input type="hidden" name="_template" value="table">
+        <button class="primary-btn" type="submit" id="reflectionSubmit">Send this page</button>
+        <p class="reflection-privacy">This note will be emailed to Sagar at the address shown in the site's privacy note. Only send what you're comfortable sharing.</p>
+        <p class="reflection-status" id="reflectionStatus" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+
     <!-- FINAL -->
     <section id="final" class="final-section reveal-section">
       <div class="final-content">
