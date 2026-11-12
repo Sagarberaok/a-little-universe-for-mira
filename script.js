@@ -242,7 +242,7 @@ let micContext = null;
 let micFrame = 0;
 let blowFrames = 0;
 let candlesFinished = false;
-const birthdayAudio = new Audio("birthday-audio-26s.mp3");
+const birthdayAudio = new Audio("1000008605.mp3");
 birthdayAudio.preload = "auto";
 birthdayAudio.addEventListener("timeupdate", () => {
   if (birthdayAudio.currentTime >= 26) {
@@ -250,7 +250,7 @@ birthdayAudio.addEventListener("timeupdate", () => {
     birthdayAudio.currentTime = 26;
   }
 });
-const birthdayAudio = new Audio("birthday-audio-26s.mp3");
+const birthdayAudio = new Audio("1000008605.mp3");
 birthdayAudio.preload = "auto";
 
 function finishCandles() {
