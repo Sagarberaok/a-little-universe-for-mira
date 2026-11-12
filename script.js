@@ -453,3 +453,45 @@ function showToast(message) {
     toast.classList.remove("toast-show");
   }, 2800);
 }
+
+
+/* ---------- Birthday reflection email form ---------- */
+const reflectionForm = document.getElementById("birthday-reflection-form");
+if (reflectionForm) {
+  reflectionForm.addEventListener("submit", async event => {
+    event.preventDefault();
+    const status = document.getElementById("reflectionStatus");
+    const submit = document.getElementById("reflectionSubmit");
+    const text = document.getElementById("birthdayReflection").value.trim();
+    if (text.length < 5) {
+      status.textContent = "Write a little more before sending.";
+      return;
+    }
+    submit.disabled = true;
+    submit.textContent = "Sending…";
+    status.textContent = "Sending your note securely…";
+    try {
+      const response = await fetch("https://formsubmit.co/ajax/sagarberaiam@gmail.com", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", "Accept": "application/json" },
+        body: JSON.stringify({
+          birthday_experience: text,
+          _subject: "Mira's birthday reflection",
+          _template: "table",
+          _honey: ""
+        })
+      });
+      const result = await response.json();
+      if (!response.ok || String(result.success) !== "true") {
+        throw new Error(result.message || "The form service did not accept the note.");
+      }
+      reflectionForm.reset();
+      status.textContent = "Your note has been sent. Thank you for sharing a piece of your day. ❤️";
+      submit.textContent = "Sent with care ✓";
+    } catch (error) {
+      status.textContent = "It couldn't be sent just now. Please try again in a little while.";
+      submit.disabled = false;
+      submit.textContent = "Try sending again";
+    }
+  });
+}
