@@ -276,3 +276,7 @@ body{background:radial-gradient(circle at 50% -10%,#382044 0,#160b10 38%,#08050e
 .soundtrack-card,.soundtrack-featured{border:1px solid var(--border);background:linear-gradient(145deg,rgba(132,45,64,.18),rgba(255,244,238,.035));}
 .soundtrack-card{min-height:260px}
 @media(max-width:560px){.soundtrack-grid{grid-template-columns:1fr}.soundtrack-card{min-height:unset}}
+
+/* Streaming links replace self-hosted audio controls */
+.soundtrack-play{display:inline-block;text-decoration:none}
+.soundtrack-note{margin-top:22px}
