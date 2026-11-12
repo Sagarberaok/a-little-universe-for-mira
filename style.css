@@ -94,8 +94,7 @@ body{background:radial-gradient(circle at 50% -10%,#382044 0,#160b10 38%,#08050e
 .timeline-item p{font-size:14px;color:var(--muted)}
 
 
-/* Mira's confirmed favourites */
-:root{--pink:#842d40;--pink2:#d49aa2;--lav:#9d6573}
+/* Preserve the original Premium V2 palette. */
 .favourites-section{background:linear-gradient(180deg,rgba(75,22,34,.24),transparent)}
 .favourite-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
 .favourite-card{min-height:145px;padding:18px;border-radius:21px;background:linear-gradient(145deg,rgba(132,45,64,.19),rgba(255,244,238,.045));border:1px solid var(--border);display:flex;flex-direction:column;align-items:flex-start;justify-content:center;transition:transform .35s,border-color .35s}
