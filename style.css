@@ -270,3 +270,9 @@ body{background:radial-gradient(circle at 50% -10%,#382044 0,#160b10 38%,#08050e
 .soundtrack-now p{margin:4px 0 0;font-size:13px;color:var(--text)}
 .soundtrack-stop{border:0;background:transparent;color:var(--pink2);font-size:12px;cursor:pointer}
 @media(max-width:560px){.soundtrack-grid{grid-template-columns:1fr}.soundtrack-card{padding:19px}.soundtrack-card p{min-height:0}}
+
+/* Equal visual weight for every song in Mira's soundtrack */
+.soundtrack-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+.soundtrack-card,.soundtrack-featured{border:1px solid var(--border);background:linear-gradient(145deg,rgba(132,45,64,.18),rgba(255,244,238,.035));}
+.soundtrack-card{min-height:260px}
+@media(max-width:560px){.soundtrack-grid{grid-template-columns:1fr}.soundtrack-card{min-height:unset}}
