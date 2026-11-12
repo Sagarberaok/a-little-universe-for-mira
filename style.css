@@ -201,3 +201,9 @@ body{background:radial-gradient(circle at 50% -10%,#382044 0,#160b10 38%,#08050e
 .joy-pick[open] summary:after{content:"−"}
 .joy-pick p{padding:0 18px 18px;color:var(--muted);font-size:13px;line-height:1.75}
 @media(max-width:560px){.joy-picks{grid-template-columns:1fr}.joy-pick summary{padding:15px}}
+
+/* Physical candle-blowing controls */
+.blow-btn{margin:4px auto 0;display:inline-block}
+.blow-btn:disabled{opacity:.65;cursor:default}
+.cake-section #blowStatus{max-width:330px;margin:14px auto 0;line-height:1.6}
+.candle.blown{opacity:.72}
