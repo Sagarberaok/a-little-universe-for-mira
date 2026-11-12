@@ -280,3 +280,17 @@ body{background:radial-gradient(circle at 50% -10%,#382044 0,#160b10 38%,#08050e
 /* Streaming links replace self-hosted audio controls */
 .soundtrack-play{display:inline-block;text-decoration:none}
 .soundtrack-note{margin-top:22px}
+
+
+/* ---------- Birthday reflection page ---------- */
+.birthday-reflection-section { max-width: 900px; margin-inline: auto; }
+.reflection-intro { max-width: 680px; color: var(--muted, #c8b8bc); line-height: 1.8; margin: 0 auto 2rem; }
+.birthday-reflection-form { max-width: 720px; margin: 0 auto; padding: clamp(1.2rem, 4vw, 2rem); border: 1px solid rgba(215,183,122,.24); border-radius: 22px; background: rgba(255,255,255,.025); display: grid; gap: 1rem; }
+.birthday-reflection-form label { color: var(--pink2); font-size: .95rem; }
+.birthday-reflection-form textarea { width: 100%; min-height: 180px; resize: vertical; border: 1px solid rgba(229,165,168,.28); border-radius: 14px; padding: 1rem; background: rgba(12,6,9,.55); color: #f7e9eb; font: inherit; line-height: 1.7; }
+.birthday-reflection-form textarea:focus { outline: 2px solid var(--gold); outline-offset: 2px; }
+.birthday-reflection-form button { justify-self: start; }
+.reflection-privacy { color: #bdaeb2; font-size: .78rem; line-height: 1.6; margin: 0; }
+.reflection-status { min-height: 1.4em; color: var(--gold); line-height: 1.5; margin: 0; }
+.reflection-honeypot { position: absolute !important; left: -10000px !important; width: 1px !important; height: 1px !important; opacity: 0 !important; }
+@media (max-width: 560px) { .birthday-reflection-form { padding: 1rem; } .birthday-reflection-form button { width: 100%; } }
