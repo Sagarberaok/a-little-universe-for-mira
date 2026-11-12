@@ -12,7 +12,7 @@ const PERSONAL = {
   // JavaScript months: January=0, February=1 ... December=11.
   birthday: new Date(2026, 10, 13, 0, 0, 0),
 
-  opening: "A small digital surprise for someone who deserves a beautiful chapter.",
+  opening: "A small digital surprise for someone whose letters and conversations have become a meaningful part of the story.",
 
   letter: `Dear Mira,
 
@@ -20,20 +20,20 @@ Happy 18th birthday. ❤️
 
 I hope this new chapter brings you countless little moments that make you genuinely happy.
 
-Keep reading the stories you love, keep discovering new worlds, keep being wonderfully you, and never forget that the best chapters are often the ones we haven't written yet.
+It still feels lovely to think that a first letter on 13 February 2025 turned into a year of letters, and then into the conversations we continue to have. From books and everyday things to questions about the wider world, I've genuinely appreciated the chance to know your thoughts.
 
-I hope 18 brings you beautiful memories, good people, peaceful days, exciting adventures and, obviously, plenty of dark chocolate.
+I hope you keep finding stories worth reading, ideas worth exploring, people who understand you, and reasons to look forward to tomorrow. I hope there are cookies when you want them, dark chocolate when you need a treat, and plenty of calm in between the busy days.
 
-This is only the beginning of your next chapter.
+Thank you for the conversations, the honesty, and the friendship. I'm glad our paths crossed.
 
-Happy birthday, Mira. ✨`,
+Wishing you a wonderful 18th birthday, Mira. Here's to the next chapter — written in your own way and at your own pace. ✨`,
 
-  final: "May Chapter 18 be full of beautiful people, unforgettable memories, peaceful nights, exciting mornings, good books, dark chocolate and countless reasons to smile. ❤️",
+  final: "May Chapter 18 bring you good people, meaningful conversations, beautiful books, quiet peace, unexpected adventures, cookies, dark chocolate, and countless reasons to smile. ❤️",
 
   gifts: [
-    "Gift 1: One year full of reasons to smile. ✨",
-    "Gift 2: A lifetime supply of imaginary dark chocolate. 🍫",
-    "Gift 3: And a reminder that someone is very glad you exist. ❤️"
+    "Gift 1: A little reminder of the first letter — 13 February 2025. ✨",
+    "Gift 2: An imaginary lifetime supply of cookies and dark chocolate. 🍫",
+    "Gift 3: And a reminder that I am genuinely glad our paths crossed. ❤️"
   ]
 };
 
@@ -187,7 +187,7 @@ for (let i = 1; i <= PERSONAL.age; i++) {
 
     if (candlesOut === PERSONAL.age) {
       document.getElementById("wishMessage").textContent =
-        "✨ All 18 candles are out. Make your wish, Mira. ✨";
+        "✨ All 18 candles are out. Make a wish for the chapter ahead, Mira. ✨";
       burstConfetti(140);
     }
   });
