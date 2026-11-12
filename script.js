@@ -177,35 +177,107 @@ function typeLetter() {
 }
 
 
-/* ---------- 18 candles ---------- */
+/* ---------- 18 candles: microphone blow + tap fallback ---------- */
 
 const candleBox = document.getElementById("candles");
+const micBlowBtn = document.getElementById("micBlowBtn");
+const blowStatus = document.getElementById("blowStatus");
 let candlesOut = 0;
+let micStream = null;
+let micContext = null;
+let micFrame = 0;
+let blowFrames = 0;
+let candlesFinished = false;
+
+function finishCandles() {
+  if (candlesFinished) return;
+  candlesFinished = true;
+  document.querySelectorAll(".candle:not(.blown)").forEach(candle => {
+    candle.classList.add("blown");
+  });
+  candlesOut = PERSONAL.age;
+  document.getElementById("wishMessage").textContent =
+    "✨ You did it! All 18 candles are out. Make a wish for the chapter ahead, Mira. ✨";
+  blowStatus.textContent = "Wish made. Happy 18th birthday! 💗";
+  micBlowBtn.textContent = "✨ All candles blown";
+  micBlowBtn.disabled = true;
+  stopMic();
+  burstConfetti(140);
+}
+
+function stopMic() {
+  if (micFrame) cancelAnimationFrame(micFrame);
+  micFrame = 0;
+  if (micStream) micStream.getTracks().forEach(track => track.stop());
+  micStream = null;
+  if (micContext && micContext.state !== "closed") micContext.close();
+  micContext = null;
+}
 
 for (let i = 1; i <= PERSONAL.age; i++) {
   const candle = document.createElement("button");
   candle.className = "candle";
+  candle.type = "button";
   candle.setAttribute("aria-label", "Candle " + i);
-
   const flame = document.createElement("span");
   flame.className = "flame";
   candle.appendChild(flame);
-
   candle.addEventListener("click", () => {
-    if (candle.classList.contains("blown")) return;
-
+    if (candlesFinished || candle.classList.contains("blown")) return;
     candle.classList.add("blown");
     candlesOut++;
-
-    if (candlesOut === PERSONAL.age) {
-      document.getElementById("wishMessage").textContent =
-        "✨ All 18 candles are out. Make a wish for the chapter ahead, Mira. ✨";
-      burstConfetti(140);
-    }
+    if (candlesOut === PERSONAL.age) finishCandles();
   });
-
   candleBox.appendChild(candle);
 }
+
+async function enableBlowDetection() {
+  if (!navigator.mediaDevices?.getUserMedia || !window.AudioContext) {
+    blowStatus.textContent = "This browser does not support microphone access here. You can still tap the candles.";
+    return;
+  }
+  micBlowBtn.disabled = true;
+  micBlowBtn.textContent = "Listening…";
+  blowStatus.textContent = "Allow microphone access, bring the phone near you, and give one clear, steady blow.";
+  try {
+    micStream = await navigator.mediaDevices.getUserMedia({
+      audio: { echoCancellation: false, noiseSuppression: false, autoGainControl: false }
+    });
+    micContext = new AudioContext();
+    if (micContext.state === "suspended") await micContext.resume();
+    const source = micContext.createMediaStreamSource(micStream);
+    const analyser = micContext.createAnalyser();
+    analyser.fftSize = 1024;
+    source.connect(analyser);
+    const samples = new Float32Array(analyser.fftSize);
+    blowFrames = 0;
+    micBlowBtn.textContent = "🎤 Listening for your blow";
+    blowStatus.textContent = "Now blow gently towards the microphone. The flames will go out together.";
+    const detect = () => {
+      if (!micStream || candlesFinished) return;
+      analyser.getFloatTimeDomainData(samples);
+      let energy = 0;
+      for (let i = 0; i < samples.length; i++) energy += samples[i] * samples[i];
+      const rms = Math.sqrt(energy / samples.length);
+      blowFrames = rms > 0.055 ? blowFrames + 1 : Math.max(0, blowFrames - 1);
+      if (blowFrames >= 5) {
+        finishCandles();
+        return;
+      }
+      micFrame = requestAnimationFrame(detect);
+    };
+    micFrame = requestAnimationFrame(detect);
+  } catch (error) {
+    stopMic();
+    micBlowBtn.disabled = false;
+    micBlowBtn.textContent = "🎤 Try microphone again";
+    blowStatus.textContent = error.name === "NotAllowedError"
+      ? "Microphone permission was denied. You can allow it in browser settings or tap the candles instead."
+      : "Couldn't start the microphone. Try again or tap the candles instead.";
+  }
+}
+
+micBlowBtn.addEventListener("click", enableBlowDetection);
 
 
 /* ---------- Photo placeholders ---------- */
