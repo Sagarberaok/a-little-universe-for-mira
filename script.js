@@ -244,6 +244,14 @@ let blowFrames = 0;
 let candlesFinished = false;
 const birthdayAudio = new Audio("birthday-audio-26s.mp3");
 birthdayAudio.preload = "auto";
+birthdayAudio.addEventListener("timeupdate", () => {
+  if (birthdayAudio.currentTime >= 26) {
+    birthdayAudio.pause();
+    birthdayAudio.currentTime = 26;
+  }
+});
+const birthdayAudio = new Audio("birthday-audio-26s.mp3");
+birthdayAudio.preload = "auto";
 
 function finishCandles() {
   if (candlesFinished) return;
@@ -258,6 +266,11 @@ function finishCandles() {
   micBlowBtn.textContent = "✨ All candles blown";
   micBlowBtn.disabled = true;
   stopMic();
+  birthdayAudio.currentTime = 0;
+  birthdayAudio.play().catch(() => {
+    blowStatus.textContent = "All candles are out! Tap the page once to start the birthday music. 💗";
+    document.addEventListener("pointerdown", () => birthdayAudio.play().catch(() => {}), { once: true });
+  });
   burstConfetti(140);
   birthdayAudio.currentTime = 0;
   birthdayAudio.play().catch(() => {
