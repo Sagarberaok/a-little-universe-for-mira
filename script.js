@@ -12,7 +12,7 @@ const PERSONAL = {
   // JavaScript months: January=0, February=1 ... December=11.
   birthday: new Date(2026, 10, 13, 0, 0, 0),
 
-  opening: "A little universe for someone with a curious mind, a caring heart, and a love for life’s little details.",
+  opening: "I made this little corner for you. I hope it gives you a reason to smile today.",
 
   letter: `Dear Mira,
 
@@ -20,7 +20,7 @@ Happy 18th birthday! ❤️
 
 Eighteen is a lovely milestone, but I hope you never feel that you must have everything figured out just because another year has begun.
 
-I hope you always make room for the things that bring you joy: getting lost in a novel, listening to Arijit Singh or Shreya Ghoshal, enjoying a plate of mutton kosa, playing Ludo or chess, and finding a reason to smile at the little things. May there always be a good movie to revisit, a new place to discover, and perhaps a panda or a horse to make your day.
+I hope life gives you enough unhurried moments to enjoy, enough surprises to keep you curious, and enough good people around you to make even ordinary days feel special.
 
 I know you are still figuring out what you want to do and where you might want to go. That's completely fine. You don't owe the world a fixed answer at eighteen. You have time to explore, change your mind and find a direction that feels right.
 
@@ -139,8 +139,8 @@ document.querySelectorAll("[data-question]").forEach(button => {
 
 /* ---------- Eighteen wishes ---------- */
 const birthdayWishes = [
-  "May you find stories that stay with you.",
-  "May music meet you in exactly the right mood.",
+  "May you find moments you wish you could hold on to.",
+  "May you always find a little peace when you need it.",
   "May you keep asking questions without losing your wonder.",
   "May your kindness be met with kindness.",
   "May you feel safe being fully yourself.",
@@ -151,7 +151,7 @@ const birthdayWishes = [
   "May you never feel rushed to have every answer.",
   "May your efforts be noticed and valued.",
   "May you keep the freedom to change your mind.",
-  "May there always be a good book nearby.",
+  "May curiosity keep opening unexpected doors.",
   "May you stand firm for what matters to you.",
   "May small joys never feel too small to celebrate.",
   "May difficult days remind you that they are only days.",
