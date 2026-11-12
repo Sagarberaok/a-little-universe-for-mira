@@ -207,3 +207,17 @@ body{background:radial-gradient(circle at 50% -10%,#382044 0,#160b10 38%,#08050e
 .blow-btn:disabled{opacity:.65;cursor:default}
 .cake-section #blowStatus{max-width:330px;margin:14px auto 0;line-height:1.6}
 .candle.blown{opacity:.72}
+
+
+/* Personal letter traces */
+.letter-traces{position:relative;overflow:hidden;background:linear-gradient(180deg,rgba(75,22,34,.18),transparent)}
+.letter-traces-intro{max-width:560px;color:var(--muted);line-height:1.8;margin:0 auto 28px}
+.trace-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px;text-align:left}
+.trace-card{position:relative;min-width:0;padding:22px 19px;border:1px solid var(--border);border-radius:20px;background:linear-gradient(145deg,rgba(132,45,64,.17),rgba(255,244,238,.035))}
+.trace-mark{display:inline-grid;place-items:center;width:34px;height:34px;border:1px solid rgba(215,183,122,.45);border-radius:50%;color:var(--gold);font-size:11px;margin-bottom:22px}
+.trace-label{font-size:9px;letter-spacing:1.7px;color:var(--gold);font-weight:700;margin:0 0 9px}
+.trace-card h3{font-size:17px;line-height:1.45;margin:0 0 10px}
+.trace-card>p:last-child{font-size:13px;line-height:1.8;color:var(--muted);margin:0}
+.trace-quote{max-width:600px;margin:30px auto 12px;padding:20px 22px;border-left:2px solid var(--gold);background:var(--card);border-radius:0 16px 16px 0;color:#f3d7d9;font:italic 19px/1.65 Georgia,serif;text-align:left}
+.trace-signoff{color:var(--muted);font-size:12px;text-align:right;max-width:600px;margin:0 auto}
+@media(max-width:700px){.trace-grid{grid-template-columns:1fr}.trace-card{padding:19px}.trace-mark{margin-bottom:15px}}
