@@ -242,6 +242,8 @@ let micContext = null;
 let micFrame = 0;
 let blowFrames = 0;
 let candlesFinished = false;
+const birthdayAudio = new Audio("birthday-audio-26s.mp3");
+birthdayAudio.preload = "auto";
 
 function finishCandles() {
   if (candlesFinished) return;
@@ -257,6 +259,15 @@ function finishCandles() {
   micBlowBtn.disabled = true;
   stopMic();
   burstConfetti(140);
+  birthdayAudio.currentTime = 0;
+  birthdayAudio.play().catch(() => {
+    blowStatus.textContent = "All candles are out! Tap the page once to play the birthday audio. 💗";
+    const playOnNextTap = () => {
+      birthdayAudio.play().catch(() => {});
+      document.removeEventListener("pointerdown", playOnNextTap);
+    };
+    document.addEventListener("pointerdown", playOnNextTap, { once: true });
+  });
 }
 
 function stopMic() {
