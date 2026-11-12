@@ -408,57 +408,6 @@ document.getElementById("chocolateBtn").addEventListener("click", () => {
 });
 
 
-/* ---------- Soundtrack ---------- */
-
-const music = document.getElementById("music");
-const trackName = document.getElementById("trackName");
-const musicStopBtn = document.getElementById("musicStopBtn");
-const trackTitles = {
-  "aashiyan": "Aashiyan · Barfi!",
-  "iktara": "Iktara · Wake Up Sid",
-  "phir-le-aya-dil": "Phir Le Aya Dil · Barfi!",
-  "ilahi": "Ilahi · Yeh Jawaani Hai Deewani"
-};
-let activeTrack = "";
-
-document.querySelectorAll("[data-track]").forEach(button => {
-  button.addEventListener("click", async () => {
-    const track = button.dataset.track;
-    const path = "music/" + track + ".mp3";
-    try {
-      if (activeTrack === track && !music.paused) {
-        music.pause();
-        button.textContent = "▶ Resume song";
-        return;
-      }
-      music.pause();
-      music.src = path;
-      music.load();
-      await music.play();
-      activeTrack = track;
-      trackName.textContent = trackTitles[track] || track;
-      document.querySelectorAll("[data-track]").forEach(item => {
-        item.textContent = item === button ? "⏸ Pause" : "▶ Play this song";
-      });
-    } catch {
-      trackName.textContent = "Song file not added yet";
-      showToast("Upload " + track + ".mp3 into the music folder first.");
-    }
-  });
-});
-
-music.addEventListener("ended", () => {
-  document.querySelectorAll("[data-track]").forEach(item => item.textContent = "▶ Play this song");
-});
-musicStopBtn.addEventListener("click", () => {
-  music.pause();
-  music.currentTime = 0;
-  document.querySelectorAll("[data-track]").forEach(item => item.textContent = "▶ Play this song");
-  trackName.textContent = "Choose a song to begin";
-  activeTrack = "";
-});
-
-
 /* ---------- Final surprise ---------- */
 
 document.getElementById("finalMessage").textContent = PERSONAL.final;
