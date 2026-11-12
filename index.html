@@ -229,13 +229,49 @@
       <div id="secretMessage" class="secret-message hidden">You don't have to have your whole life figured out at eighteen. Keep learning, keep exploring, and give yourself the same patience you offer other people. 💗</div>
     </section>
 
-    <!-- MUSIC -->
-    <section class="section-pad music-section reveal-section">
-      <p class="eyebrow">A SOUNDTRACK</p>
-      <h2>Press Play 🎵</h2>
-      <button id="musicBtn" class="primary-btn">▶ Play</button>
-      <p class="tiny-note">A little space for a birthday soundtrack, if you ever choose one.</p>
-      <audio id="music" loop><source src="birthday.mp3" type="audio/mpeg"></audio>
+    <!-- HER SOUNDTRACK -->
+    <section class="section-pad music-section reveal-section" id="soundtrack">
+      <p class="eyebrow">A SOUNDTRACK FOR DIFFERENT LITTLE MOMENTS</p>
+      <h2 If="false"> </h2>
+      <h2>A Little Music for Every Mood 🎵</h2>
+      <p class="soundtrack-intro">Some songs feel like a place, some like a memory, and some simply make an ordinary day better. Here are a few musical corners, beginning with one I thought belonged here.</p>
+      <div class="soundtrack-grid">
+        <article class="soundtrack-card soundtrack-featured">
+          <span class="soundtrack-number">01 · THE LITTLE UNIVERSE</span>
+          <div class="soundtrack-icon">🌙</div>
+          <h3>Aashiyan</h3>
+          <p>For a gentle, hopeful moment — a little world of your own.</p>
+          <button class="soundtrack-play" type="button" data-track="aashiyan">▶ Play this song</button>
+        </article>
+        <article class="soundtrack-card">
+          <span class="soundtrack-number">02 · SLOW EVENINGS</span>
+          <div class="soundtrack-icon">☁️</div>
+          <h3>Iktara</h3>
+          <p>For quiet evenings, daydreams and letting your thoughts wander.</p>
+          <button class="soundtrack-play" type="button" data-track="iktara">▶ Play this song</button>
+        </article>
+        <article class="soundtrack-card">
+          <span class="soundtrack-number">03 · A LITTLE NOSTALGIA</span>
+          <div class="soundtrack-icon">📖</div>
+          <h3>Phir Le Aya Dil</h3>
+          <p>For the moments when a melody feels like an old page you want to revisit.</p>
+          <button class="soundtrack-play" type="button" data-track="phir-le-aya-dil">▶ Play this song</button>
+        </article>
+        <article class="soundtrack-card">
+          <span class="soundtrack-number">04 · OPEN ROADS</span>
+          <div class="soundtrack-icon">✨</div>
+          <h3>Ilahi</h3>
+          <p>For new beginnings, curious days and the excitement of what lies ahead.</p>
+          <button class="soundtrack-play" type="button" data-track="ilahi">▶ Play this song</button>
+        </article>
+      </div>
+      <div class="soundtrack-now" aria-live="polite">
+        <span class="soundtrack-equalizer">♫</span>
+        <div><small>NOW PLAYING</small><p id="trackName">Choose a song to begin</p></div>
+        <button id="musicStopBtn" type="button" class="soundtrack-stop">Stop</button>
+      </div>
+      <audio id="music" preload="none"></audio>
+      <p class="tiny-note">The songs are suggestions. Add your audio files to the <code>music</code> folder in the GitHub repository to make the play buttons work.</p>
     </section>
 
     <!-- FINAL -->
