@@ -12,7 +12,7 @@ const PERSONAL = {
   // JavaScript months: January=0, February=1 ... December=11.
   birthday: new Date(2026, 10, 13, 0, 0, 0),
 
-  opening: "A little universe for someone with a curious mind, a caring heart, and a story entirely her own.",
+  opening: "A little universe for someone with a curious mind, a caring heart, and a love for life’s little details.",
 
   letter: `Dear Mira,
 
@@ -20,19 +20,17 @@ Happy 18th birthday! ❤️
 
 Eighteen is a lovely milestone, but I hope you never feel that you must have everything figured out just because another year has begun.
 
-One thing I have come to appreciate about you is the way you think. You ask questions, look at things from different angles, and care about subjects that are easy for people to ignore. Your thoughts about equality, women's safety and human behaviour show that you want to understand the world, not simply accept it as it is.
+I hope you always make room for the things that bring you joy: getting lost in a novel, listening to Arijit Singh or Shreya Ghoshal, enjoying a plate of mutton kosa, playing Ludo or chess, and finding a reason to smile at the little things. May there always be a good movie to revisit, a new place to discover, and perhaps a panda or a horse to make your day.
 
-I also notice how much your family means to you, how seriously you take friendship, and how much you value effort and sincerity. And alongside all those serious thoughts, I hope life keeps giving you festivals to look forward to, delicious food to enjoy, new places to explore and little reasons to laugh.
+I know you are still figuring out what you want to do and where you might want to go. That's completely fine. You don't owe the world a fixed answer at eighteen. You have time to explore, change your mind and find a direction that feels right.
 
-You have spoken about travelling, becoming independent, supporting your parents and doing something meaningful for children and older people. I hope you get the opportunity to explore all those possibilities. And if your plans change along the way, that's perfectly all right too. You are allowed to discover new interests and choose a different direction.
+You once described a fear that life might not turn out the way you imagined. I hope you remember that an unexpected path isn't automatically a failed one. Some beautiful things may be waiting beyond the plans you have today. I wish you the courage to keep choosing, learning and beginning again.
 
-May eighteen bring you confidence without pressure, independence without loneliness, and people who respect your dreams as much as you respect theirs.
+I also appreciate the way you question the world, care about fairness, and value the people close to you. May you find people who return your kindness with sincerity, and may you always have the freedom to build a life that feels like your own.
 
-Thank you for letting me know a little of your world through our conversations. I'm glad our paths crossed.
+Happy birthday, Mira. May this wine-red chapter be full of warmth, courage, laughter and lovely surprises. ✨`,
 
-Happy birthday, Mira. The next chapter is yours. Take your time writing it. ✨`,
-
-  final: "May eighteen bring you new places to discover, meaningful work to pursue, people who value you, time with your family, and the freedom to become whoever you choose. ❤️",
+  final: "May eighteen bring you stories worth reading, songs worth replaying, new places to explore, people who value you, and the freedom to become whoever you choose. ❤️",
 
   gifts: [
     "A wish for courage: may you try the things that once felt a little out of reach. ✨",
