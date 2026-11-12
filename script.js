@@ -64,7 +64,10 @@ document.getElementById("startBtn").addEventListener("click", () => {
 
 const particleBox = document.getElementById("particles");
 
-for (let i = 0; i < 35; i++) {
+const isSmallScreen = window.matchMedia("(max-width: 700px)").matches;
+const particleCount = isSmallScreen ? 10 : 22;
+
+for (let i = 0; i < particleCount; i++) {
   const p = document.createElement("i");
   p.className = "particle";
   p.style.left = Math.random() * 100 + "%";
@@ -86,11 +89,18 @@ const revealObserver = new IntersectionObserver(entries => {
 
 document.querySelectorAll(".reveal-section").forEach(section => revealObserver.observe(section));
 
+let scrollTicking = false;
 function updateScrollProgress() {
   const max = document.documentElement.scrollHeight - window.innerHeight;
   progressBar.style.width = (max > 0 ? (window.scrollY / max) * 100 : 0) + "%";
+  scrollTicking = false;
 }
-window.addEventListener("scroll", updateScrollProgress, { passive: true });
+window.addEventListener("scroll", () => {
+  if (!scrollTicking) {
+    scrollTicking = true;
+    requestAnimationFrame(updateScrollProgress);
+  }
+}, { passive: true });
 updateScrollProgress();
 
 // Subtle pointer depth on larger screens.
@@ -306,6 +316,7 @@ document.getElementById("finalBtn").addEventListener("click", () => {
 /* ---------- Confetti ---------- */
 
 function burstConfetti(amount = 80) {
+  amount = isSmallScreen ? Math.min(amount, 35) : Math.min(amount, 90);
   const colors = ["#ff78aa", "#b99cff", "#ffd98a", "#ffffff", "#ffb5d0"];
 
   for (let i = 0; i < amount; i++) {
