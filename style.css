@@ -185,3 +185,19 @@ body{background:radial-gradient(circle at 50% -10%,#382044 0,#160b10 38%,#08050e
   .nav-links::-webkit-scrollbar{display:none}
   .nav-links a{flex:0 0 auto;font-size:11px;padding:6px 0}
 }
+
+/* Interactive personal corner on Little Joys */
+.joy-picker{margin:48px 0 12px}
+.joy-picker h2{font-size:clamp(24px,5vw,32px);margin:10px 0}
+.joy-picker-intro{color:var(--muted);font-size:14px;margin:0 0 18px}
+.joy-picks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.joy-pick{min-width:0;border:1px solid var(--border);border-radius:20px;background:var(--card);overflow:hidden}
+.joy-pick summary{list-style:none;cursor:pointer;padding:18px;display:grid;grid-template-columns:34px 1fr;column-gap:10px;align-items:center}
+.joy-pick summary::-webkit-details-marker{display:none}
+.joy-pick summary span{grid-row:span 2;font-size:26px}
+.joy-pick summary b{font-size:14px}
+.joy-pick summary small{font-size:11px;color:var(--muted)}
+.joy-pick summary:after{content:"＋";grid-column:2;color:var(--gold);font-size:16px;margin-top:5px}
+.joy-pick[open] summary:after{content:"−"}
+.joy-pick p{padding:0 18px 18px;color:var(--muted);font-size:13px;line-height:1.75}
+@media(max-width:560px){.joy-picks{grid-template-columns:1fr}.joy-pick summary{padding:15px}}
