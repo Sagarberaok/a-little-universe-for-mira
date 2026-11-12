@@ -10,7 +10,7 @@ const PERSONAL = {
 
   // Change this to the actual birthday.
   // JavaScript months: January=0, February=1 ... December=11.
-  birthday: new Date(2026, 9, 20, 0, 0, 0),
+  birthday: new Date(2026, 10, 13, 0, 0, 0),
 
   opening: "A small digital surprise for someone who deserves a beautiful chapter.",
 
