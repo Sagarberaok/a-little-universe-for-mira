@@ -221,3 +221,31 @@ body{background:radial-gradient(circle at 50% -10%,#382044 0,#160b10 38%,#08050e
 .trace-quote{max-width:600px;margin:30px auto 12px;padding:20px 22px;border-left:2px solid var(--gold);background:var(--card);border-radius:0 16px 16px 0;color:#f3d7d9;font:italic 19px/1.65 Georgia,serif;text-align:left}
 .trace-signoff{color:var(--muted);font-size:12px;text-align:right;max-width:600px;margin:0 auto}
 @media(max-width:700px){.trace-grid{grid-template-columns:1fr}.trace-card{padding:19px}.trace-mark{margin-bottom:15px}}
+
+
+/* Letter memories, conversation room and birthday wish sky */
+.memory-section,.conversation-section,.wishes-section{position:relative;overflow:hidden}
+.memory-intro,.conversation-intro,.wishes-intro{max-width:570px;margin:0 auto 26px;color:var(--muted);line-height:1.8}
+.memory-list{max-width:690px;margin:0 auto;display:grid;gap:12px;text-align:left}
+.memory-note{padding:19px 22px;border:1px solid var(--border);border-radius:18px;background:linear-gradient(120deg,rgba(132,45,64,.16),rgba(255,244,238,.025))}
+.memory-note span{font-size:9px;letter-spacing:1.8px;color:var(--gold);font-weight:700}
+.memory-note p{margin:9px 0 0;color:var(--text);font:italic 16px/1.75 Georgia,serif}
+.question-options{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;text-align:left}
+.question-card{min-width:0;min-height:155px;padding:18px;border:1px solid var(--border);border-radius:18px;background:var(--card);color:var(--text);text-align:left;cursor:pointer;display:flex;flex-direction:column;align-items:flex-start;gap:12px;transition:border-color .2s,background .2s}
+.question-card span{color:var(--gold);font-size:10px;letter-spacing:1.5px}
+.question-card b{font-size:15px;line-height:1.5}
+.question-card small{margin-top:auto;color:var(--muted);font-size:10px;letter-spacing:.7px}
+.question-card.selected{border-color:var(--gold);background:rgba(132,45,64,.24)}
+.question-reveal{max-width:680px;min-height:112px;margin:18px auto 0;padding:20px 22px;border-left:2px solid var(--gold);border-radius:0 16px 16px 0;background:var(--card);text-align:left}
+.question-prompt{margin:0;color:var(--muted);font-size:13px}
+.question-thought{margin:0;color:var(--text);font:italic 16px/1.8 Georgia,serif}
+.wish-sky{max-width:600px;min-height:190px;margin:10px auto 20px;padding:25px;display:grid;grid-template-columns:repeat(6,1fr);gap:15px;align-items:center;justify-items:center;border:1px solid rgba(215,183,122,.16);border-radius:24px;background:radial-gradient(ellipse at center,rgba(132,45,64,.19),rgba(22,11,16,.2) 70%)}
+.wish-star{width:36px;height:36px;border:0;background:transparent;color:#d7b77a;font-size:25px;cursor:pointer;opacity:.75;transition:transform .2s,opacity .2s,text-shadow .2s;animation:starPulse 3.5s ease-in-out infinite;animation-delay:var(--star-delay)}
+.wish-star:nth-child(3n){font-size:19px;color:#e5a5a8}
+.wish-star:hover,.wish-star.chosen{opacity:1;transform:scale(1.3);text-shadow:0 0 18px rgba(229,165,168,.8)}
+@keyframes starPulse{50%{opacity:.45}}
+.star-wish{max-width:570px;min-height:100px;margin:0 auto;padding:17px 20px;border:1px solid var(--border);border-radius:18px;background:var(--card)}
+.star-wish span{color:var(--gold);font-size:22px}
+.star-wish p{margin:8px 0 0;color:var(--text);line-height:1.7}
+@media(max-width:700px){.question-options{grid-template-columns:1fr}.question-card{min-height:unset}.wish-sky{grid-template-columns:repeat(6,1fr);gap:8px;padding:18px 10px;min-height:160px}.wish-star{width:32px;height:32px;font-size:22px}}
+@media(prefers-reduced-motion:reduce){.wish-star{animation:none}}
