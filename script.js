@@ -408,23 +408,54 @@ document.getElementById("chocolateBtn").addEventListener("click", () => {
 });
 
 
-/* ---------- Music ---------- */
+/* ---------- Soundtrack ---------- */
 
 const music = document.getElementById("music");
-const musicBtn = document.getElementById("musicBtn");
+const trackName = document.getElementById("trackName");
+const musicStopBtn = document.getElementById("musicStopBtn");
+const trackTitles = {
+  "aashiyan": "Aashiyan · Barfi!",
+  "iktara": "Iktara · Wake Up Sid",
+  "phir-le-aya-dil": "Phir Le Aya Dil · Barfi!",
+  "ilahi": "Ilahi · Yeh Jawaani Hai Deewani"
+};
+let activeTrack = "";
 
-musicBtn.addEventListener("click", async () => {
-  try {
-    if (music.paused) {
-      await music.play();
-      musicBtn.textContent = "⏸ Pause";
-    } else {
+document.querySelectorAll("[data-track]").forEach(button => {
+  button.addEventListener("click", async () => {
+    const track = button.dataset.track;
+    const path = "music/" + track + ".mp3";
+    try {
+      if (activeTrack === track && !music.paused) {
+        music.pause();
+        button.textContent = "▶ Resume song";
+        return;
+      }
       music.pause();
-      musicBtn.textContent = "▶ Play";
+      music.src = path;
+      music.load();
+      await music.play();
+      activeTrack = track;
+      trackName.textContent = trackTitles[track] || track;
+      document.querySelectorAll("[data-track]").forEach(item => {
+        item.textContent = item === button ? "⏸ Pause" : "▶ Play this song";
+      });
+    } catch {
+      trackName.textContent = "Song file not added yet";
+      showToast("Upload " + track + ".mp3 into the music folder first.");
     }
-  } catch {
-    showToast("Add birthday.mp3 to the website folder first.");
-  }
+  });
+});
+
+music.addEventListener("ended", () => {
+  document.querySelectorAll("[data-track]").forEach(item => item.textContent = "▶ Play this song");
+});
+musicStopBtn.addEventListener("click", () => {
+  music.pause();
+  music.currentTime = 0;
+  document.querySelectorAll("[data-track]").forEach(item => item.textContent = "▶ Play this song");
+  trackName.textContent = "Choose a song to begin";
+  activeTrack = "";
 });
 
 
