@@ -92,3 +92,18 @@ body{background:radial-gradient(circle at 50% -10%,#382044 0,#160b10 38%,#08050e
 .timeline-item span{font-size:10px;letter-spacing:2px;color:var(--gold);font-weight:700}
 .timeline-item h3{margin:8px 0 5px}
 .timeline-item p{font-size:14px;color:var(--muted)}
+
+
+/* Mira's confirmed favourites */
+:root{--pink:#842d40;--pink2:#d49aa2;--lav:#9d6573}
+.favourites-section{background:linear-gradient(180deg,rgba(75,22,34,.24),transparent)}
+.favourite-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.favourite-card{min-height:145px;padding:18px;border-radius:21px;background:linear-gradient(145deg,rgba(132,45,64,.19),rgba(255,244,238,.045));border:1px solid var(--border);display:flex;flex-direction:column;align-items:flex-start;justify-content:center;transition:transform .35s,border-color .35s}
+.favourite-card:hover{transform:translateY(-5px);border-color:rgba(212,154,162,.45)}
+.favourite-card span{font-size:27px;margin-bottom:8px}
+.favourite-card small{font-size:9px;letter-spacing:1.6px;color:var(--gold);font-weight:700}
+.favourite-card h3{font-size:15px;line-height:1.35;margin-top:5px}
+.future-section{text-align:center;background:linear-gradient(180deg,rgba(75,22,34,.22),transparent)}
+.future-section>p:not(.eyebrow){color:var(--muted);max-width:510px;margin:0 auto 18px}
+.future-section blockquote{margin:25px auto;padding:20px;border-left:2px solid var(--gold);background:var(--card);border-radius:0 16px 16px 0;color:#f3d7d9;font-size:19px;font-style:italic;max-width:480px}
+@media(max-width:380px){.favourite-grid{gap:8px}.favourite-card{padding:14px;min-height:135px}.favourite-card h3{font-size:14px}}
