@@ -107,3 +107,23 @@ body{background:radial-gradient(circle at 50% -10%,#382044 0,#160b10 38%,#08050e
 .future-section>p:not(.eyebrow){color:var(--muted);max-width:510px;margin:0 auto 18px}
 .future-section blockquote{margin:25px auto;padding:20px;border-left:2px solid var(--gold);background:var(--card);border-radius:0 16px 16px 0;color:#f3d7d9;font-size:19px;font-style:italic;max-width:480px}
 @media(max-width:380px){.favourite-grid{gap:8px}.favourite-card{padding:14px;min-height:135px}.favourite-card h3{font-size:14px}}
+
+
+/* ===== MOBILE PERFORMANCE PATCH =====
+   Keep the visual identity while reducing expensive paint/compositing work. */
+@media(max-width:700px){
+  #particles{opacity:.28}
+  .particle{animation-duration:14s!important}
+  .trait-card,.chapter,.gift,.countdown>div,.favourite-card{backdrop-filter:none!important;-webkit-backdrop-filter:none!important;box-shadow:none}
+  .glow{filter:none;opacity:.16;animation:none}
+  .hero:after{display:none}
+  .envelope:after{display:none}
+  .chapter:before,.final-section:before,.chocolate-section:before{display:none}
+  .reveal-section{transform:translateY(12px);transition:opacity .35s ease,transform .35s ease}
+  .trait-card,.chapter,.gift,.photo-card,.countdown>div,.favourite-card{transition:none}
+  .trait-card:hover,.chapter:hover,.gift:hover,.photo-card:hover,.countdown>div:hover,.favourite-card:hover{transform:none;box-shadow:none}
+}
+@media(prefers-reduced-motion:reduce){
+  #particles,.glow,.hero-depth,.big-heart{animation:none!important}
+  .reveal-section{opacity:1!important;transform:none!important}
+}
