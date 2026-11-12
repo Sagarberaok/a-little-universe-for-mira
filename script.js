@@ -12,28 +12,32 @@ const PERSONAL = {
   // JavaScript months: January=0, February=1 ... December=11.
   birthday: new Date(2026, 10, 13, 0, 0, 0),
 
-  opening: "A small digital surprise for someone whose letters and conversations have become a meaningful part of the story.",
+  opening: "A little universe for someone with a curious mind, a caring heart, and a story entirely her own.",
 
   letter: `Dear Mira,
 
-Happy 18th birthday. ❤️
+Happy 18th birthday! ❤️
 
-I hope this new chapter brings you countless little moments that make you genuinely happy.
+Eighteen is a lovely milestone, but I hope you never feel that you must have everything figured out just because another year has begun.
 
-It still feels lovely to think that a first letter on 13 February 2025 turned into a year of letters, and then into the conversations we continue to have. From books and everyday things to questions about the wider world, I've genuinely appreciated the chance to know your thoughts.
+One thing I have come to appreciate about you is the way you think. You ask questions, look at things from different angles, and care about subjects that are easy for people to ignore. Your thoughts about equality, women's safety and human behaviour show that you want to understand the world, not simply accept it as it is.
 
-I hope you keep finding stories worth reading, ideas worth exploring, people who understand you, and reasons to look forward to tomorrow. I hope there are cookies when you want them, dark chocolate when you need a treat, and plenty of calm in between the busy days.
+I also notice how much your family means to you, how seriously you take friendship, and how much you value effort and sincerity. And alongside all those serious thoughts, I hope life keeps giving you festivals to look forward to, delicious food to enjoy, new places to explore and little reasons to laugh.
 
-Thank you for the conversations, the honesty, and the friendship. I'm glad our paths crossed.
+You have spoken about travelling, becoming independent, supporting your parents and doing something meaningful for children and older people. I hope you get the opportunity to explore all those possibilities. And if your plans change along the way, that's perfectly all right too. You are allowed to discover new interests and choose a different direction.
 
-Wishing you a wonderful 18th birthday, Mira. Here's to the next chapter — written in your own way and at your own pace. ✨`,
+May eighteen bring you confidence without pressure, independence without loneliness, and people who respect your dreams as much as you respect theirs.
 
-  final: "May Chapter 18 bring you good people, meaningful conversations, beautiful books, quiet peace, unexpected adventures, cookies, dark chocolate, and countless reasons to smile. ❤️",
+Thank you for letting me know a little of your world through our conversations. I'm glad our paths crossed.
+
+Happy birthday, Mira. The next chapter is yours. Take your time writing it. ✨`,
+
+  final: "May eighteen bring you new places to discover, meaningful work to pursue, people who value you, time with your family, and the freedom to become whoever you choose. ❤️",
 
   gifts: [
-    "Gift 1: A little reminder of the first letter — 13 February 2025. ✨",
-    "Gift 2: An imaginary lifetime supply of cookies and dark chocolate. 🍫",
-    "Gift 3: And a reminder that I am genuinely glad our paths crossed. ❤️"
+    "A wish for courage: may you try the things that once felt a little out of reach. ✨",
+    "A wish for discovery: may you travel, meet different people and keep learning about the world. 🌍",
+    "A wish for peace: may you have people around whom you can be entirely yourself. ❤️"
   ]
 };
 
