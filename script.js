@@ -124,6 +124,60 @@ document.querySelectorAll("[data-scroll]").forEach(button => {
 });
 
 
+/* ---------- Conversation room ---------- */
+const questionThoughts = ["Being understood can feel like being seen; being accepted can feel like being safe. Perhaps the rare thing is finding people with whom you don't have to choose between the two.","Maybe happiness becomes less about having everything go right, and more about noticing what is meaningful—even when life is ordinary or imperfect.","I think respect matters most when agreement ends. Listening does not require surrendering your values, and disagreement does not have to become disrespect."];
+const questionReveal = document.getElementById("questionReveal");
+document.querySelectorAll("[data-question]").forEach(button => {
+  button.addEventListener("click", () => {
+    document.querySelectorAll("[data-question]").forEach(item => item.classList.remove("selected"));
+    button.classList.add("selected");
+    const thought = questionThoughts[Number(button.dataset.question)];
+    questionReveal.innerHTML = "<p class=\"question-prompt\">A thought to begin with</p><p class=\"question-thought\"></p>";
+    questionReveal.querySelector(".question-thought").textContent = thought;
+  });
+});
+
+/* ---------- Eighteen wishes ---------- */
+const birthdayWishes = [
+  "May you find stories that stay with you.",
+  "May music meet you in exactly the right mood.",
+  "May you keep asking questions without losing your wonder.",
+  "May your kindness be met with kindness.",
+  "May you feel safe being fully yourself.",
+  "May you find courage for unfamiliar beginnings.",
+  "May laughter arrive on ordinary days.",
+  "May you have time for the people you love.",
+  "May you discover places that make you feel alive.",
+  "May you never feel rushed to have every answer.",
+  "May your efforts be noticed and valued.",
+  "May you keep the freedom to change your mind.",
+  "May there always be a good book nearby.",
+  "May you stand firm for what matters to you.",
+  "May small joys never feel too small to celebrate.",
+  "May difficult days remind you that they are only days.",
+  "May the next year bring unexpected reasons to smile.",
+  "May eighteen be the beginning of a chapter that feels like yours."
+];
+const wishSky = document.getElementById("wishSky");
+const starWish = document.getElementById("starWish");
+if (wishSky && starWish) {
+  birthdayWishes.forEach((wish, index) => {
+    const star = document.createElement("button");
+    star.type = "button";
+    star.className = "wish-star";
+    star.textContent = "✦";
+    star.setAttribute("aria-label", "Open birthday wish " + (index + 1));
+    star.style.setProperty("--star-delay", (index % 6) * 0.23 + "s");
+    star.addEventListener("click", () => {
+      wishSky.querySelectorAll(".wish-star").forEach(item => item.classList.remove("chosen"));
+      star.classList.add("chosen");
+      starWish.innerHTML = "<span>✦</span><p></p>";
+      starWish.querySelector("p").textContent = wish;
+    });
+    wishSky.appendChild(star);
+  });
+}
+
 /* ---------- Countdown ---------- */
 
 function updateCountdown() {
