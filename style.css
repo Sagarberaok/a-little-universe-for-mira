@@ -159,3 +159,30 @@ body{background:radial-gradient(circle at 50% -10%,#382044 0,#160b10 38%,#08050e
 .letter-page-card p{color:var(--muted);line-height:1.9;margin:0 0 19px}
 .letter-page-card p:first-child{color:var(--text);font-weight:700}
 .letter-page-card .letter-signoff{color:var(--pink2);margin:8px 0 0}
+
+/* Compact, swipeable navigation on small screens */
+@media(max-width:560px){
+  .site-nav{
+    flex-direction:row;
+    align-items:center;
+    gap:12px;
+    padding:12px 14px;
+    min-width:0;
+  }
+  .nav-brand{font-size:13px;flex:0 0 auto}
+  .nav-links{
+    flex:1 1 auto;
+    min-width:0;
+    flex-wrap:nowrap;
+    justify-content:flex-start;
+    gap:15px;
+    overflow-x:auto;
+    overflow-y:hidden;
+    white-space:nowrap;
+    scrollbar-width:none;
+    -webkit-overflow-scrolling:touch;
+    padding:2px 1px 5px;
+  }
+  .nav-links::-webkit-scrollbar{display:none}
+  .nav-links a{flex:0 0 auto;font-size:11px;padding:6px 0}
+}
