@@ -28,9 +28,9 @@ You once described a fear that life might not turn out the way you imagined. I h
 
 I also appreciate the way you question the world, care about fairness, and value the people close to you. May you find people who return your kindness with sincerity, and may you always have the freedom to build a life that feels like your own.
 
-Happy birthday, Mira. May this wine-red chapter be full of warmth, courage, laughter and lovely surprises. ✨`,
+Happy birthday, Mira. I hope the year ahead is kind to you, brings a few wonderful surprises, and gives you plenty of reasons to laugh. ✨`,
 
-  final: "May eighteen bring you stories worth reading, songs worth replaying, new places to explore, people who value you, and the freedom to become whoever you choose. ❤️",
+  final: "I hope eighteen is good to you. Take your time, make mistakes, change your mind, laugh often, and build a life that feels genuinely yours. ❤️",
 
   gifts: [
     "A wish for courage: may you try the things that once felt a little out of reach. ✨",
